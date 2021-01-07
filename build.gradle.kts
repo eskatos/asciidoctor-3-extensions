@@ -1,5 +1,5 @@
 plugins {
-    id("org.asciidoctor.convert") version "1.6.1"
+    id("org.asciidoctor.jvm.convert") version "2.4.0"
 }
 
 repositories {
@@ -14,12 +14,7 @@ dependencies {
     asciidoctorExternalExtensions(files("src/main/resources"))
 }
 
-configurations.asciidoctor {
-    extendsFrom(asciidoctorExternalExtensions)
-}
-
 tasks.asciidoctor {
-    outputDir = layout.buildDirectory.dir("docs/asciidoc").get().asFile
-    separateOutputDirs = false
     attributes(mutableMapOf("nofooter" to true))
+    configurations(asciidoctorExternalExtensions.name)
 }
