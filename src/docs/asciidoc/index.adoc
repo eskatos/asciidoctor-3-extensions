@@ -1,0 +1,11 @@
+= Some document
+
+Some paragraph.
+
+.Some sample snippet
+====
+include::sample[dir="src/snippets/some/groovy",files="build.gradle[]"]
+include::sample[dir="src/snippets/some/kotlin",files="build.gradle.kts[]"]
+====
+
+Another paragraph.
